@@ -1,4 +1,8 @@
-The MIT License (MIT)
+This Project is a polymer web component wrapper for
+CodeMirror "Copyright (C) 2015 by Marijn Haverbeke <marijnh@gmail.com> and others"
+- https://github.com/codemirror/CodeMirror/blob/master/LICENSE.
+
+Everything else in this repository is distributed under MIT License (MIT)
 
 Copyright (c) 2016 Fabian Bormann
 
