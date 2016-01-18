@@ -57,6 +57,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           value: ""
         },
 
+        editor: {
+          type: Object,
+          notify: true
+        },
+
         keyMap: {
           type: String,
           value: "sublime"
@@ -75,16 +80,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         theme: {
           type: String,
           value: "monokai"
-        },
-
-        _editor: {
-          type: Object
         }
       },
 
       attached: function() {
         this.content = this.textContent.trim();
-        this._editor = CodeMirror(this.$.editor, {
+        this.editor = CodeMirror(this.$.editor, {
           value: this.content,
           lineNumbers: true,
           mode: this.language,
@@ -94,13 +95,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           showCursorWhenSelecting: true,
           theme: this.theme,
           tabSize: this.tabSize
-        },
-
-        getSource: function() {
-          return this._editor.getValue()
-        }
-
-        );
+        });
       }
     });
   </script>
