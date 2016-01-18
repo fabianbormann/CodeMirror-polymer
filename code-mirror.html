@@ -57,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           value: ""
         },
 
-        editor: {
+        _editor: {
           type: Object,
           notify: true
         },
@@ -85,7 +85,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       attached: function() {
         this.content = this.textContent.trim();
-        this.editor = CodeMirror(this.$.editor, {
+        this._editor = CodeMirror(this.$.editor, {
           value: this.content,
           lineNumbers: true,
           mode: this.language,
@@ -96,6 +96,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           theme: this.theme,
           tabSize: this.tabSize
         });
+      },
+
+      getSource: function() {
+        return this._editor.getValue();
       }
     });
   </script>
