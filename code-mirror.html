@@ -117,6 +117,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       getSource: function() {
         return this._editor.getValue();
+      },
+
+      setSource: function(text) {
+        this._editor.setValue(text);
       }
     });
   </script>
